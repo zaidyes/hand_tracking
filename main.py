@@ -1,8 +1,7 @@
 from collections import deque
 import numpy as np
 import cv2
-#import pyautogui as pt
-#pt.FAILSAFE = False
+
 handCascade = cv2.CascadeClassifier("hand.xml")
 
 # initialize the list of tracked points, the frame counter,
@@ -79,13 +78,11 @@ while True:
                     s = -SPEED
                 else:
                     s = SPEED
-                #pt.moveRel(s, 0)
 
                 if dY > 0:
                     s = -SPEED
                 else:
                     s = SPEED
-                #pt.moveRel(0, s)
         # otherwise, compute the thickness of the line and
         # draw the connecting lines
         thickness = int(np.sqrt(DEQUE_MAX_LEN / float(i + 1)) * 1.5)
